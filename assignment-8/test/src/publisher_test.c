@@ -1,0 +1,77 @@
+/*
+ * publisher_test.c
+ *
+ * Test suite function for Publisher
+ *
+ *  Created on: Oct 1, 2017
+ *  Author: philip gust
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "publisher.h"
+#include "CUnit/CUnit.h"
+#include "CUnit/Basic.h"
+
+/**
+ * Test Publisher functions for local allocation.
+ */
+static void test_publisher_local(void) {
+	const char* pubNames[5] = {
+	"National Geographic Society", "Time", "Science Service", "Sunset", "Life"};
+
+	// test local local publisher
+	for (int i = 0; i < 5; i++) {
+		Publisher p1, p2;
+
+		// create local instance of publisher
+		Publisher *pub1 = createPublisher(pubNames[i], &p1);
+		CU_ASSERT_PTR_NOT_NULL_FATAL(pub1);
+		CU_ASSERT_PTR_EQUAL(pub1, &p1);
+		CU_ASSERT_STRING_EQUAL(pub1->name, pubNames[i]);
+
+		// create second instance of publisher
+		Publisher *pub2 = createPublisher(pubNames[i], &p2);
+		CU_ASSERT_PTR_NOT_NULL_FATAL(pub2);
+		CU_ASSERT_PTR_EQUAL(pub2, &p2);
+		CU_ASSERT_STRING_EQUAL(pub2->name, pubNames[i]);
+
+		// verify they are different
+		CU_ASSERT_PTR_NOT_EQUAL(pub1, pub2);
+	}
+}
+
+/**
+ * Test Publisher functions for dynamic allocation.
+ */
+static void test_publisher_dynamic(void) {
+	const char* pubNames[5] = {
+	"National Geographic Society", "Time", "Science Service", "Sunset", "Life"};
+
+	for (int i = 0; i < 5; i++) {
+		// create instance of publisher
+		Publisher *pub1 = createPublisher(pubNames[i], NULL);
+		CU_ASSERT_PTR_NOT_NULL_FATAL(pub1);
+		CU_ASSERT_STRING_EQUAL(pub1->name, pubNames[i]);
+
+		// create second instance of publisher
+		Publisher *pub2 = createPublisher(pubNames[i], NULL);
+		CU_ASSERT_PTR_NOT_NULL_FATAL(pub2);
+		CU_ASSERT_STRING_EQUAL(pub2->name, pubNames[i]);
+
+		// verify they are the same instance
+		CU_ASSERT_PTR_EQUAL(pub1, pub2);
+	}
+}
+
+/**
+ * Add suite for publisher unit tests
+ */
+void publisher_test(void) {
+	// add a suite to the registry with no init or cleanup
+	CU_pSuite pSuite = CU_add_suite("publisher_test", NULL, NULL);
+
+	// add the tests to the suite
+	CU_add_test(pSuite, "test_publisher_local", test_publisher_local);
+	CU_add_test(pSuite, "test_publisher_dynamic", test_publisher_dynamic);
+}

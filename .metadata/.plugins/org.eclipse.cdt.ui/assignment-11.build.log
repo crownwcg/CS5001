@@ -1,0 +1,15 @@
+13:17:38 **** Incremental Build of configuration Debug for project assignment-11 ****
+make all 
+Building file: ../src/final-2.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-2.d" -MT"src/final-2.o" -o "src/final-2.o" "../src/final-2.c"
+Finished building: ../src/final-2.c
+ 
+Building target: assignment-11
+Invoking: MacOS X C Linker
+gcc  -o "assignment-11"  ./src/final-2.o   
+Finished building target: assignment-11
+ 
+
+13:17:38 Build Finished (took 489ms)
+

@@ -1,0 +1,15 @@
+11:23:36 **** Incremental Build of configuration Debug for project journal in Vcache ****
+make all 
+Building file: ../test/src/journal_test.c
+Invoking: GCC C Compiler
+gcc -I"/Users/crown/Desktop/Assignments/journal in Vcache/src" -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"test/src/journal_test.d" -MT"test/src/journal_test.o" -o "test/src/journal_test.o" "../test/src/journal_test.c"
+Finished building: ../test/src/journal_test.c
+ 
+Building target: journal in Vcache
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "journal in Vcache"  ./test/src/issn_test.o ./test/src/journal_test.o ./test/src/publisher_test.o ./test/src/test_all.o  ./src/issn.o ./src/journal.o ./src/main_v2.o ./src/publisher.o ./src/vcache.o   -lcunit
+Finished building target: journal in Vcache
+ 
+
+11:23:36 Build Finished (took 184ms)
+

@@ -1,0 +1,320 @@
+12:16:42 **** Clean-only build of configuration Debug for project final ****
+make clean 
+rm -rf  ./src/final-1.o  ./src/final-1.d  final
+ 
+12:16:42 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-1.d" -MT"src/final-1.o" -o "src/final-1.o" "../src/final-1.c"
+Finished building: ../src/final-1.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-1.o   
+Finished building target: final
+ 
+12:17:02 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-1.d" -MT"src/final-1.o" -o "src/final-1.o" "../src/final-1.c"
+Finished building: ../src/final-1.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-1.o   
+Finished building target: final
+ 
+12:26:36 **** Clean-only build of configuration Debug for project final ****
+make clean 
+rm -rf  ./src/final-1.o  ./src/final-1.d  final
+ 
+12:26:36 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-2.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-2.d" -MT"src/final-2.o" -o "src/final-2.o" "../src/final-2.c"
+Finished building: ../src/final-2.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-2.o   
+Finished building target: final
+ 
+12:33:39 **** Clean-only build of configuration Debug for project final ****
+make clean 
+rm -rf  ./src/final-2.o  ./src/final-2.d  final
+ 
+12:33:39 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-3.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-3.d" -MT"src/final-3.o" -o "src/final-3.o" "../src/final-3.c"
+../src/final-3.c:119:29: warning: format specifies type 'char *' but the argument has type 'const char *' [-Wformat]
+    sscanf(str, "%s of %s", valueName[card->value], suitName[card->suit]);
+                 ~~         ^~~~~~~~~~~~~~~~~~~~~~
+                 %s
+../src/final-3.c:119:53: warning: format specifies type 'char *' but the argument has type 'const char *' [-Wformat]
+    sscanf(str, "%s of %s", valueName[card->value], suitName[card->suit]);
+                       ~~                           ^~~~~~~~~~~~~~~~~~~~
+                       %s
+2 warnings generated.
+Finished building: ../src/final-3.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-3.o   
+Finished building target: final
+ 
+12:34:50 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-3.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-3.d" -MT"src/final-3.o" -o "src/final-3.o" "../src/final-3.c"
+Finished building: ../src/final-3.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-3.o   
+Finished building target: final
+ 
+12:36:00 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-3.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-3.d" -MT"src/final-3.o" -o "src/final-3.o" "../src/final-3.c"
+Finished building: ../src/final-3.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-3.o   
+Finished building target: final
+ 
+12:38:23 **** Clean-only build of configuration Debug for project final ****
+make clean 
+rm -rf  ./src/final-3.o  ./src/final-3.d  final
+ 
+12:38:23 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-4.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-4.d" -MT"src/final-4.o" -o "src/final-4.o" "../src/final-4.c"
+../src/final-4.c:65:26: error: expected expression
+        if (sscanf(input[], "%d", num) == 1) {
+                         ^
+../src/final-4.c:96:40: warning: passing 'char **' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+                printf("%.2f expected: %.2f\n", calc(cmds[i]), expected[i]);
+                                                     ^~~~~~~
+../src/final-4.c:59:25: note: passing argument to parameter 'input' here
+double calc(const char* input[]) {
+                        ^
+1 warning and 1 error generated.
+make: *** [src/final-4.o] Error 1
+12:38:54 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-4.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-4.d" -MT"src/final-4.o" -o "src/final-4.o" "../src/final-4.c"
+../src/final-4.c:65:36: warning: format specifies type 'int *' but the argument has type 'double' [-Wformat]
+        if (sscanf(input[i], "%d", num) == 1) {
+                              ~~   ^~~
+../src/final-4.c:61:12: warning: unused variable 'result' [-Wunused-variable]
+    double result = 0;
+           ^
+../src/final-4.c:98:40: warning: passing 'char **' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+                printf("%.2f expected: %.2f\n", calc(cmds[i]), expected[i]);
+                                                     ^~~~~~~
+../src/final-4.c:59:25: note: passing argument to parameter 'input' here
+double calc(const char* input[]) {
+                        ^
+3 warnings generated.
+Finished building: ../src/final-4.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-4.o   
+Finished building target: final
+ 
+12:44:15 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-4.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-4.d" -MT"src/final-4.o" -o "src/final-4.o" "../src/final-4.c"
+../src/final-4.c:66:36: warning: format specifies type 'int *' but the argument has type 'double' [-Wformat]
+        if (sscanf(input[i], "%d", num) == 1) {
+                              ~~   ^~~
+../src/final-4.c:77:36: warning: format specifies type 'char *' but the argument has type 'int' [-Wformat]
+            sscanf(input[i], "%c", c);
+                              ~~   ^
+../src/final-4.c:77:36: warning: variable 'c' is uninitialized when used here [-Wuninitialized]
+            sscanf(input[i], "%c", c);
+                                   ^
+../src/final-4.c:76:19: note: initialize the variable 'c' to silence this warning
+            char c;
+                  ^
+                   = '\0'
+../src/final-4.c:115:40: warning: passing 'char **' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+                printf("%.2f expected: %.2f\n", calc(cmds[i]), expected[i]);
+                                                     ^~~~~~~
+../src/final-4.c:59:25: note: passing argument to parameter 'input' here
+double calc(const char* input[]) {
+                        ^
+4 warnings generated.
+Finished building: ../src/final-4.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-4.o   
+Finished building target: final
+ 
+12:44:28 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-4.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-4.d" -MT"src/final-4.o" -o "src/final-4.o" "../src/final-4.c"
+../src/final-4.c:66:36: warning: format specifies type 'int *' but the argument has type 'double *' [-Wformat]
+        if (sscanf(input[i], "%d", &num) == 1) {
+                              ~~   ^~~~
+                              %lf
+../src/final-4.c:115:40: warning: passing 'char **' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+                printf("%.2f expected: %.2f\n", calc(cmds[i]), expected[i]);
+                                                     ^~~~~~~
+../src/final-4.c:59:25: note: passing argument to parameter 'input' here
+double calc(const char* input[]) {
+                        ^
+2 warnings generated.
+Finished building: ../src/final-4.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-4.o   
+Finished building target: final
+ 
+12:44:48 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-4.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-4.d" -MT"src/final-4.o" -o "src/final-4.o" "../src/final-4.c"
+../src/final-4.c:115:40: warning: passing 'char **' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+                printf("%.2f expected: %.2f\n", calc(cmds[i]), expected[i]);
+                                                     ^~~~~~~
+../src/final-4.c:59:25: note: passing argument to parameter 'input' here
+double calc(const char* input[]) {
+                        ^
+1 warning generated.
+Finished building: ../src/final-4.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-4.o   
+Finished building target: final
+ 
+12:48:30 **** Clean-only build of configuration Debug for project final ****
+make clean 
+rm -rf  ./src/final-4.o  ./src/final-4.d  final
+ 
+12:48:31 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-5.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-5.d" -MT"src/final-5.o" -o "src/final-5.o" "../src/final-5.c"
+../src/final-5.c:43:17: warning: unused variable 'lip' [-Wunused-variable]
+    const char *lip = lookingIn;
+                ^
+../src/final-5.c:44:17: warning: unused variable 'lfp' [-Wunused-variable]
+    const char *lfp = lookingFor;
+                ^
+2 warnings generated.
+Finished building: ../src/final-5.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-5.o   
+Finished building target: final
+ 
+12:48:42 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-5.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-5.d" -MT"src/final-5.o" -o "src/final-5.o" "../src/final-5.c"
+Finished building: ../src/final-5.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-5.o   
+Finished building target: final
+ 
+12:55:02 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-5.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-5.d" -MT"src/final-5.o" -o "src/final-5.o" "../src/final-5.c"
+Finished building: ../src/final-5.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-5.o   
+Finished building target: final
+ 
+12:57:02 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-5.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-5.d" -MT"src/final-5.o" -o "src/final-5.o" "../src/final-5.c"
+Finished building: ../src/final-5.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-5.o   
+Finished building target: final
+ 
+12:57:45 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-5.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-5.d" -MT"src/final-5.o" -o "src/final-5.o" "../src/final-5.c"
+../src/final-5.c:43:21: error: read-only variable is not assignable
+    if (*lookingFor = '\0') return lookingIn;
+        ~~~~~~~~~~~ ^
+1 error generated.
+make: *** [src/final-5.o] Error 1
+12:57:55 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-5.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-5.d" -MT"src/final-5.o" -o "src/final-5.o" "../src/final-5.c"
+Finished building: ../src/final-5.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-5.o   
+Finished building target: final
+ 
+12:58:42 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-5.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-5.d" -MT"src/final-5.o" -o "src/final-5.o" "../src/final-5.c"
+Finished building: ../src/final-5.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-5.o   
+Finished building target: final
+ 
+12:59:04 **** Incremental Build of configuration Debug for project final ****
+make all 
+Building file: ../src/final-5.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/final-5.d" -MT"src/final-5.o" -o "src/final-5.o" "../src/final-5.c"
+Finished building: ../src/final-5.c
+ 
+Building target: final
+Invoking: MacOS X C Linker
+gcc  -o "final"  ./src/final-5.o   
+Finished building target: final
+ 
+12:59:07 **** Incremental Build of configuration Debug for project final ****
+make all 
+make: Nothing to be done for `all'.

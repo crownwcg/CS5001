@@ -1,0 +1,4 @@
+/assignment-8/assignment-8.doxyfile
+/assignment-8/assignment-8.doxyfile
+/assignment-7/assignment-7.doxyfile
+/assignment-7/assignment-7.doxyfile

@@ -1,0 +1,41 @@
+11:48:38 **** Incremental Build of configuration Debug for project lecture15 ****
+make all 
+Building file: ../src/argp_argument_processing.c
+Invoking: GCC C Compiler
+gcc -I"/usr/local/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/argp_argument_processing.d" -MT"src/argp_argument_processing.o" -o "src/argp_argument_processing.o" "../src/argp_argument_processing.c"
+Finished building: ../src/argp_argument_processing.c
+ 
+Building file: ../src/argument_processing.c
+Invoking: GCC C Compiler
+gcc -I"/usr/local/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/argument_processing.d" -MT"src/argument_processing.o" -o "src/argument_processing.o" "../src/argument_processing.c"
+Finished building: ../src/argument_processing.c
+ 
+Building file: ../src/diy_argument_processing.c
+Invoking: GCC C Compiler
+gcc -I"/usr/local/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/diy_argument_processing.d" -MT"src/diy_argument_processing.o" -o "src/diy_argument_processing.o" "../src/diy_argument_processing.c"
+Finished building: ../src/diy_argument_processing.c
+ 
+Building file: ../src/getopt_argument_processing.c
+Invoking: GCC C Compiler
+gcc -I"/usr/local/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/getopt_argument_processing.d" -MT"src/getopt_argument_processing.o" -o "src/getopt_argument_processing.o" "../src/getopt_argument_processing.c"
+Finished building: ../src/getopt_argument_processing.c
+ 
+Building file: ../src/getopt_long_argument_processing.c
+Invoking: GCC C Compiler
+gcc -I"/usr/local/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/getopt_long_argument_processing.d" -MT"src/getopt_long_argument_processing.o" -o "src/getopt_long_argument_processing.o" "../src/getopt_long_argument_processing.c"
+Finished building: ../src/getopt_long_argument_processing.c
+ 
+Building target: lecture15
+Invoking: MacOS X C Linker
+gcc  -o "lecture15"  ./src/argp_argument_processing.o ./src/argument_processing.o ./src/diy_argument_processing.o ./src/getopt_argument_processing.o ./src/getopt_long_argument_processing.o   
+Undefined symbols for architecture x86_64:
+  "_argp_parse", referenced from:
+      _argp_main in argp_argument_processing.o
+  "_argp_usage", referenced from:
+      _parse_opt in argp_argument_processing.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [lecture15] Error 1
+
+11:48:38 Build Finished (took 460ms)
+

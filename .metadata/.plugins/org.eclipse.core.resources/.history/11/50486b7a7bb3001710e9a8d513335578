@@ -1,0 +1,269 @@
+/*
+ ============================================================================
+ Name        : assignment-11.c
+ Author      : Chenggang(Crown) Wang
+ Course/Term : CS 5001 Fall 2017 Northeastern University Silicon Valley
+
+ Description : assignment-11
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#include <math.h>
+
+/**
+ * Writes the palindrome of the plainText input to the palText output
+ *
+ * @param paltext a pointer to the result text
+ * @param plaintext the text to make palindrome
+ * @return the pointer to the result text
+ */
+char *makePalindrome(char *palText, const char *plainText) {
+    const char *plainp = plainText;
+    char *palp = palText;
+
+    while (*plainp != '\0') {
+        *palp++ = *plainp++;
+    }
+    while (plainp != plainText) {
+        *palp++ = *--plainp;
+    }
+    *++palp = '\0';
+    return palText;
+}
+
+/**
+ * Estimate the text whether it is a palindrome
+ *
+ * @param txt pointer to the text to estimate
+ * @return true if the input text is a palindrome and otherwise.
+ */
+bool isPalindrome(const char* txt) {
+//    char *aux = malloc(sizeof(char) * (strlen(txt) + 1));
+//    char *auxp = aux;
+//    const char *txtp = txt;
+//    while (*txtp != '\0') {
+//        txtp++;
+//    }
+//    while (txtp != txt) {
+//        *auxp++ = *--txtp;
+//    }
+//    *auxp = '\0';
+//    while (*aux != '\0') {
+//        if (*aux++ != *txt++)
+//            return false;
+//    }
+//    return true;
+    const char *start = txt;
+    const char *end = txt + strlen(txt) - 1;
+    while (start < end) {
+        if (*start++ != *end--)
+            return false;
+    }
+    return true;
+}
+
+/**
+ * Transposes a rows x cols 2D array mat into the 2D array cols x rows 2D array trans
+ *
+ * @param rows rows of array mat
+ * @param cols cols of array mat
+ * @param mat 2D array mat
+ * @param trans 2D array trans
+ */
+void transpose(int rows, int cols, const int mat[rows][cols], int trans[cols][rows]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            trans[j][i] = mat[i][j];
+        }
+    }
+}
+
+/**
+ * Initializes the n x n square 2D array mat with the value 1 when the row number
+ * is also the column number, and the value 0 otherwise.
+ *
+ * @param n
+ * @param mat 2D array mat
+ */
+void makeIdentity(int n, int mat[n][n]) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; i++) {
+            mat[i][j] = 0;
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        mat[i][i] = 1;
+    }
+}
+
+/**
+ * Creates a string representation of the SSN with proper punctuation.
+ *
+ * @param ssn SSN number to convert
+ * @param str pointer to hold the result string
+ * @return pointer to the string representation of the SSN with proper punctuation.
+ */
+char *ssnToString(unsigned int ssn, char *str) {
+    sprintf(str, "%03d-%02d-%04d",  ssn/1000000, ssn/10000%100, ssn%10000);
+    return str;
+}
+
+/**
+ * Parses a string into an unsigned integer representation.
+ *
+ * @param str pointer to the string to calculate the ssn number
+ * @return ssn of the string represented or 0 if the SSN is not a valid SSN.
+ */
+unsigned int parseSSN(const char *str) {
+    unsigned int hi, mid, lo;
+    char *vStr = malloc(20);
+    if ((sscanf(str, "%03d-%02d-%04d", &hi, &mid, &lo) == 3)
+            && (strcmp(ssnToString(hi % 1000 * 1000000 + mid % 100 * 10000 + lo % 10000, vStr), str) == 0))
+        return hi % 1000 * 1000000 + mid % 100 * 10000 + lo % 10000;
+    return 0;
+}
+
+/**
+ * Define and typedef a struct Point that contains two double variables x and y.
+ */
+typedef struct Point {
+    double x;
+    double y;
+} Point;
+
+/**
+ * Takes pointers to two Point structs, and computes the distance between them.
+ * The distance between two points is the square root of the square of the x distances
+ * plus the square of the y distances for the two points.
+ *
+ * @param point1 pointer to one point
+ * @param point2 pointer to the other point
+ * @return the distance between two points
+ */
+double distanceofPoints(Point* point1, Point* point2) {
+    double delx = point1->x - point2->x;
+    double dely = point1->y - point2->y;
+    return sqrt(delx * delx + dely * dely);
+}
+
+/**
+ * Define anEquilateralTriange struct with two points:
+ * the bottom left of the triangle (basePoint),
+ * and the apex of the triangle (apexPoint).
+ */
+typedef struct {
+    Point basePoint;
+    Point apexPoint;
+} EquilateralTriangle;
+
+/**
+ * Calculate the width of the triangle
+ *
+ * @param triangle an pointer to an EquilateralTriangle
+ * @return the width of the triangle
+ */
+double getWidth(EquilateralTriangle *triangle) {
+    if (triangle != NULL)
+        return distanceofPoints(&triangle->basePoint, &triangle->apexPoint);
+    return 0;
+}
+
+/**
+ * Calculate the height of the triangle
+ *
+ * @param triangle an pointer to an EquilateralTriangle
+ * @return the height of the triangle
+ */
+double getHeight(EquilateralTriangle *triangle) {
+    if (triangle != NULL)
+        return getWidth(triangle) * sqrt(3) / 2;
+    return 0;
+}
+
+/**
+ * Calculate the length of a side
+ *
+ * @param triangle an pointer to an EquilateralTriangle
+ * @return the length of a side
+ */
+double getSide(EquilateralTriangle *triangle) {
+    if (triangle != NULL)
+        return getWidth(triangle);
+    return 0;
+}
+
+/**
+ * Calculate the area of the triangle
+ *
+ * @param triangle an pointer to an EquilateralTriangle
+ * @return the area of the triangle
+ */
+double getArea(EquilateralTriangle *triangle) {
+    if (triangle != NULL)
+        return getSide(triangle) * getHeight(triangle) / 2;
+    return 0;
+}
+
+/**
+ * Print a 2D array
+ *
+ * @param rows rows of array
+ * @param cols cols of array
+ * @param arr 2D array
+ */
+void printArr(int rows, int cols, int arr[rows][cols]) {
+    printf("{\n");
+    for (int i = 0; i < rows; i++) {
+        printf("{ ");
+        char *c = "";
+        for (int j = 0; j < cols; j++) {
+            printf("%s%d", c, arr[i][j]);
+            c = ", ";
+        }
+        printf(" }\n");
+    }
+    printf(" }\n");
+}
+
+int main(void) {
+    /** test of makePalindrome and isPalindrome */
+	char *str = malloc(20);
+	printf("\"Hello world\" palindrome : \"%s\"\n",makePalindrome(str, "Hello world"));
+	printf("\"Hello world\" %s palindrome\n",isPalindrome("Hello world") ? "is" : "is not");
+	printf("\"abcba\" %s palindromw\n",isPalindrome("abcba") ? "is" : "is not");
+	printf("\"%s\" %s palindrome\n",makePalindrome(str, "Hello world"), isPalindrome(makePalindrome(str, "Hello world")) ? "is" : "is not");
+
+	/** test of transpose */
+	int mat[2][4] = {{1,2,3,4},{5,6,7,8}};
+	int trans[4][2];
+	transpose(2, 4, mat, trans);
+	printf("mat array:\n");
+	printArr(2, 4, mat);
+	printf("trans array:\n");
+	printArr(4, 2, trans);
+
+	/** test of makeIdentity */
+	int mattres[5][5];
+	makeIdentity(mattres);
+	printArr(mattres);
+
+	/** test of parseSSN and ssnToString */
+	int ssn = 798342240;
+	char *ssnStr = "798-34-2240";
+	printf("\"%s\" ssn : %d\n", ssnStr, parseSSN(ssnStr));
+	printf("\"%d\" ssnStr : %s\n", ssn, ssnToString(ssn, str));
+	printf("\"65a-34-249\" ssn : %d\n", parseSSN("65a-34-249"));
+
+	/** test of EquilateralTriangle struct, getWidth, getHeight, getSide, getArea */
+	EquilateralTriangle tri = {{0,0}, {0,2}};
+	printf("getWidth: %.2f\n", getWidth(&tri));
+	printf("getHeight: %.2f\n", getHeight(&tri));
+	printf("getSide: %.2f\n", getSide(&tri));
+	printf("getArea: %.2f\n", getArea(&tri));
+
+	return EXIT_SUCCESS;
+}

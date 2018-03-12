@@ -1,0 +1,15 @@
+17:06:27 **** Incremental Build of configuration Debug for project assignment-7 ****
+make all 
+Building file: ../src/str.c
+Invoking: GCC C Compiler
+gcc -I/usr/local/include -I"/Users/crown/Desktop/Assignments/assignment-7/src" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/str.d" -MT"src/str.o" -o "src/str.o" "../src/str.c"
+Finished building: ../src/str.c
+ 
+Building target: assignment-7
+Invoking: MacOS X C Linker
+gcc -L/usr/local/lib -o "assignment-7"  ./test/src/rectangle_test.o ./test/src/str_test.o ./test/src/test_all.o  ./src/assignment-7_test.o ./src/circle.o ./src/point.o ./src/rectangle.o ./src/str.o   -lcunit
+Finished building target: assignment-7
+ 
+
+17:06:27 Build Finished (took 189ms)
+

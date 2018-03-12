@@ -1,0 +1,50 @@
+14:03:15 **** Build of configuration Debug for project assignment-8-test ****
+make all 
+Building file: ../src/issn.c
+Invoking: Cross GCC Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/issn.d" -MT"src/issn.o" -o "src/issn.o" "../src/issn.c"
+Finished building: ../src/issn.c
+ 
+Building file: ../src/issn_test.c
+Invoking: Cross GCC Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/issn_test.d" -MT"src/issn_test.o" -o "src/issn_test.o" "../src/issn_test.c"
+Finished building: ../src/issn_test.c
+ 
+Building file: ../src/journal.c
+Invoking: Cross GCC Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/journal.d" -MT"src/journal.o" -o "src/journal.o" "../src/journal.c"
+Finished building: ../src/journal.c
+ 
+Building file: ../src/journal_test.c
+Invoking: Cross GCC Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/journal_test.d" -MT"src/journal_test.o" -o "src/journal_test.o" "../src/journal_test.c"
+Finished building: ../src/journal_test.c
+ 
+Building file: ../src/main_v2.c
+Invoking: Cross GCC Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main_v2.d" -MT"src/main_v2.o" -o "src/main_v2.o" "../src/main_v2.c"
+Finished building: ../src/main_v2.c
+ 
+Building file: ../src/publisher.c
+Invoking: Cross GCC Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/publisher.d" -MT"src/publisher.o" -o "src/publisher.o" "../src/publisher.c"
+Finished building: ../src/publisher.c
+ 
+Building file: ../src/publisher_test.c
+Invoking: Cross GCC Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/publisher_test.d" -MT"src/publisher_test.o" -o "src/publisher_test.o" "../src/publisher_test.c"
+Finished building: ../src/publisher_test.c
+ 
+Building file: ../src/test_all.c
+Invoking: Cross GCC Compiler
+gcc -I/usr/local/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_all.d" -MT"src/test_all.o" -o "src/test_all.o" "../src/test_all.c"
+Finished building: ../src/test_all.c
+ 
+Building target: assignment-8-test
+Invoking: Cross GCC Linker
+gcc -L/usr/local/lib -o "assignment-8-test"  ./src/issn.o ./src/issn_test.o ./src/journal.o ./src/journal_test.o ./src/main_v2.o ./src/publisher.o ./src/publisher_test.o ./src/test_all.o   -lcunit
+Finished building target: assignment-8-test
+ 
+
+14:03:16 Build Finished (took 628ms)
+
